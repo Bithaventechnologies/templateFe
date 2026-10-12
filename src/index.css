@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-page: #eef1f4;
+  --color-panel: #ffffff;
+  --color-ink: #1b2430;
+  --color-muted: #667085;
+  --color-line: #dde2e8;
+  --color-field: #f8f9fb;
+  --color-brand: #0f766e;
+  --color-brand-ink: #ffffff;
+  --color-soft: #e6f2f1;
+}
+
+/* Dark mode follows the system setting */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-page: #12171d;
+    --color-panel: #1a2129;
+    --color-ink: #e8ecf0;
+    --color-muted: #98a2b0;
+    --color-line: #2a333d;
+    --color-field: #121820;
+    --color-brand: #2dd4bf;
+    --color-brand-ink: #06201d;
+    --color-soft: #16302d;
+  }
+}
+
+body {
+  @apply bg-page text-ink font-sans text-[15px] leading-snug;
+}
