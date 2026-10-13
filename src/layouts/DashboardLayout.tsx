@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const links = [["/dashboard", "Dashboard"], ["/templates", "Email Templates"], ["/templates/new", "Create Template"], ["/compose", "Compose Email"], ["/history", "Email History"], ["/settings", "Settings"]];
+const links = [["/dashboard", "Dashboard"], ["/templates", "Email Templates"], ["/templates/new", "Create Template"], ["/compose", "Compose Email"], ["/settings", "Settings"]];
 export default function DashboardLayout() {
   const { signOut } = useAuth(); const navigate = useNavigate(); const location = useLocation(); const [menu, setMenu] = useState(false); const [confirm, setConfirm] = useState(false);
   const title = links.find(([path]) => path === location.pathname)?.[1] ?? (location.pathname.includes("/edit") ? "Edit Template" : "Email Studio");
