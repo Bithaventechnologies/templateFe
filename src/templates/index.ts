@@ -56,7 +56,7 @@ export const templates: Template[] = [
       ),
   },
   {
-    id: "congrats",
+    id: "congratulations",
     icon: "🎉",
     label: "Congratulations",
     desc: "Celebrate a win",
@@ -84,7 +84,7 @@ export const templates: Template[] = [
       ),
   },
   {
-    id: "promo",
+    id: "promotional",
     icon: "🏷️",
     label: "Promotional",
     desc: "Offers and discounts",
@@ -119,7 +119,7 @@ export const templates: Template[] = [
       ),
   },
   {
-    id: "announce",
+    id: "announcement",
     icon: "📣",
     label: "Announcement",
     desc: "News and updates",
