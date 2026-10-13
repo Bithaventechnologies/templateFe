@@ -1,0 +1,2 @@
+import { Link, useParams } from "react-router-dom";
+export default function EditTemplate() { const { id } = useParams(); return <section className="max-w-2xl rounded-xl border border-line bg-panel p-6"><h2 className="text-2xl font-bold">Template editing unavailable</h2><p className="mt-3 text-muted">The current backend exposes no confirmed endpoint to load or update a template by ID ({id}). No changes were submitted.</p><Link to="/templates" className="mt-5 inline-block rounded-lg bg-brand px-4 py-2.5 font-semibold text-brand-ink">Back to templates</Link></section>; }

@@ -17,7 +17,11 @@ Open the address Vite prints (usually http://localhost:5173).
 
 ```
 src/
-  App.tsx                 page layout and state
+  App.tsx                 router and auth provider
+  routes/routes.tsx       public, protected, and nested dashboard routes
+  layouts/                shared authenticated navigation layout
+  pages/                  dashboard, templates, composer, settings, and states
+  context/AuthContext.tsx  single session state and unauthorized handling
   types.ts                EmailData and Template types
   templates/index.ts      local presentation details for email templates
   lib/html.ts             helpers for email-safe HTML
@@ -49,3 +53,24 @@ VITE_API_URL=https://templatebe.onrender.com/api
 Copy `.env.example` to `.env` for local configuration. The owner password and email provider credentials belong on the backend and must not be added to frontend environment variables.
 
 The composer authenticates with the owner password, loads the backend email template definitions, previews via `/emails/preview`, and sends via `/emails/send`. The local `templates/index.ts` contains presentation details used to display known templates; the API controls which ones are available.
+
+## Routes
+
+- `/login` — owner sign in
+- `/dashboard` — overview and quick actions
+- `/templates` — templates returned by `GET /emails/templates`
+- `/templates/new` — explains that creation needs a confirmed backend API
+- `/templates/:id/edit` — explains that editing needs a confirmed backend API
+- `/compose` — preview and send email
+- `/history` — explains that no history endpoint is available
+- `/settings` — browser-local business and sender names
+
+The repository includes no backend source or confirmed create, update, delete, or history endpoint. Those operations are intentionally not submitted until the backend contract is available. Template listing, preview, and sending use the existing `/emails/templates`, `/emails/preview`, and `/emails/send` API functions.
+
+## Verify
+
+```bash
+npm run build
+```
+
+The build runs TypeScript checking and creates the production bundle. There is no lint or test script configured in `package.json`.
